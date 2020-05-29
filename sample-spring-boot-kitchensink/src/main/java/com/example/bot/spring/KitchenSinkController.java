@@ -108,7 +108,7 @@ public class KitchenSinkController {
 
     @EventMapping
     public void handleTextMessageEvent(MessageEvent<TextMessageContent> event) throws Exception {
-        TextMessageContent message = new TextMessageContent("あなたは'" + event.getMessage().getText() + "'と言いました");
+        TextMessageContent message = event.getMessage();
         handleTextContent(event.getReplyToken(), event, message);
     }
 
